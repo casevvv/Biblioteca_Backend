@@ -15,7 +15,7 @@
   <!-- Enlace a tu archivo de estilos personalizado -->
   <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
   <!-- Icono del sitio -->
-  <link rel="icon" href="{{ asset('img/cinepolislogo.ico') }}" type="image/x-icon">
+  <link rel="icon" href="{{ asset('img/biblioteca.ico') }}" type="image/x-icon">
 </head>
 
 
@@ -24,7 +24,7 @@
   <nav class="navbar">
     <div class="logo_item">
       <i class="bx bx-menu" id="sidebarOpen"></i>
-      <img src="{{ asset('img/cinepolislogo.png') }}" alt=""></i>CinePolis
+      <img src="{{ asset('img/biblioteca.png') }}" alt=""></i>Biblioteca
     </div>
     <div class="navbar_content">
       <i class="bi bi-grid"></i>

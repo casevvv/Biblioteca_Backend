@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Prestamo extends Model
 {
     protected $table = 'prestamos';
-    protected $primaryKey = 'id_prestamo';
+    protected $primaryKey = 'id';
 
     public $timestamps = true; // Activar timestamps automáticos
     const CREATED_AT = 'fecha_prestamo';
