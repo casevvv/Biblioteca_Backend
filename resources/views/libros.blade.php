@@ -38,26 +38,26 @@
           </a>
         </div>
         <ul class="nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="{{ route('dashboard') }}">
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('mostrar_estadisticas') }}">
               <i class="nc-icon nc-chart-pie-35"></i>
               <p>Dashboard</p>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ route('profile') }}">
+            <a class="nav-link" href="">
               <i class="nc-icon nc-circle-09"></i>
               <p>User Profile</p>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="">
+          <li class="nav-item active">
+            <a class="nav-link" href="{{ route('mostrar_libros') }}">
               <i class="nc-icon nc-notes"></i>
               <p>Book List</p>
             </a>
           </li>
           <li>
-            <a class="nav-link" href="./profileUser.blade.php">
+            <a class="nav-link" href="">
               <i class="nc-icon nc-bell-55"></i>
               <p>Notifications</p>
             </a>

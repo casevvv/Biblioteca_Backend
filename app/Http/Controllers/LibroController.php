@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Log;
 class LibroController extends Controller
 {
 
-    public function show_all_book(Request $request)
+    public function mostrarLibros(Request $request)
     {
         $get_categorias = Categoria::all();
         $get_autores = Autor::all();
