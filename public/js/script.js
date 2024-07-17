@@ -2,10 +2,7 @@ const body = document.querySelector("body");
 const darkLight = document.querySelector("#darkLight");
 const sidebar = document.querySelector(".sidebar");
 const submenuItems = document.querySelectorAll(".submenu_item");
-const sidebarOpen = document.querySelector("#sidebarOpen");
-const sidebarClose = document.querySelector(".collapse_sidebar");
-const sidebarExpand = document.querySelector(".expand_sidebar");
-sidebarOpen.addEventListener("click", () => sidebar.classList.toggle("close"));
+
 
 function toggleInput(inputId) {
   var inputElement = document.getElementById(inputId);
@@ -30,41 +27,6 @@ function updateTextInput(selectElement,inputId) {
  
 }
 
-/*--*/
-function ajustarTamañoDiv() {
-  const redDiv = document.querySelector(".red_div");
-  // Obtener el ancho actual del sidebar
-  const sidebarWidth = window.getComputedStyle(sidebar).getPropertyValue("width");
-  // Establecer el ancho del sidebar como el valor del left del div rojo
-  redDiv.style.transition = "left 0.5s ease"; // Agregar transición
-  redDiv.style.left = sidebar.classList.contains("close") ? "80px" : sidebarWidth;
-}
-
-// Ajustar el tamaño del div rojo cuando se fije o se cierre la barra lateral
-sidebar.addEventListener("click", ajustarTamañoDiv);
-window.addEventListener("resize", ajustarTamañoDiv);
-window.addEventListener("load", ajustarTamañoDiv);
-/*--*/
-
-
-sidebarClose.addEventListener("click", () => {
-  sidebar.classList.add("close", "hoverable");
-});
-sidebarExpand.addEventListener("click", () => {
-  sidebar.classList.remove("close", "hoverable");
-});
-
-sidebar.addEventListener("mouseenter", () => {
-  if (sidebar.classList.contains("hoverable")) {
-    sidebar.classList.remove("close");
-  }
-});
-sidebar.addEventListener("mouseleave", () => {
-  if (sidebar.classList.contains("hoverable")) {
-    sidebar.classList.add("close");
-  }
-});
-
 darkLight.addEventListener("click", () => {
   body.classList.toggle("dark");
   if (body.classList.contains("dark")) {
@@ -85,13 +47,6 @@ submenuItems.forEach((item, index) => {
     });
   });
 });
-
-if (window.innerWidth < 768) {
-  sidebar.classList.add("close");
-} else {
-  sidebar.classList.remove("close");
-}
-
 
 
 //--------------------------------//

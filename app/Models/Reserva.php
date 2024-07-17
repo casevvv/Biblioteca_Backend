@@ -9,11 +9,9 @@ class Reserva extends Model
     protected $table = 'reservas';
     protected $primaryKey = 'id';
 
-    public $timestamps = true; // Activar timestamps automáticos
-    const CREATED_AT = 'fecha_reserva';
-    const UPDATED_AT = null;
+    public $timestamps = false; // timestamps automáticos
 
-    protected $fillable = ['id_usuario', 'id_libro', 'estado_reserva'];
+    protected $fillable = ['id_usuario', 'id_libro','fecha_reserva','fecha_confirm_reserva','estado_reserva'];
 
     public function usuario()
     {

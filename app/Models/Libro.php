@@ -28,12 +28,14 @@ class Libro extends Model
 
     public function prestamos()
     {
-        return $this->hasMany(Prestamo::class, 'id');
+        return $this->hasMany(Prestamo::class, 'id_libro');
     }
 
     public function reservas()
     {
-        return $this->hasMany(Reserva::class, 'id');
+        return $this->hasMany(Reserva::class, 'id_libro');
     }
+
+    
 }
 

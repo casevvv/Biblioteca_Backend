@@ -8,12 +8,12 @@ class Prestamo extends Model
 {
     protected $table = 'prestamos';
     protected $primaryKey = 'id';
+    protected $fecha_prestamo = 'fecha_prestamo';
+    protected $fecha_devolucion = 'fecha_devolucion';
 
-    public $timestamps = true; // Activar timestamps automáticos
-    const CREATED_AT = 'fecha_prestamo';
-    const UPDATED_AT = 'fecha_devolucion';
+    public $timestamps = false; // desactivar timestamps automáticos
 
-    protected $fillable = ['id_usuario', 'id_libro', 'estado'];
+    protected $fillable = ['id_usuario', 'id_libro', 'estado', 'fecha_prestamo','fecha_devolucion'];
 
     public function usuario()
     {

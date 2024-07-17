@@ -13,9 +13,9 @@ class CreateReservasTable extends Migration
             $table->id('id');
             $table->foreignId('id_usuario')->constrained('usuarios', 'id');
             $table->foreignId('id_libro')->constrained('libros', 'id');
-            $table->date('fecha_reserva');
+            $table->timestamp('fecha_reserva')->nullable(false); // Asegúrate de que no sea nulo
+            $table->timestamp('fecha_confirm_reserva')->nullable(); // Puede ser nulo al inicio
             $table->enum('estado_reserva', ['pendiente', 'completada', 'cancelada'])->default('pendiente');
-            $table->timestamps();
 
             $table->index('id_libro');
             $table->index('id_usuario');

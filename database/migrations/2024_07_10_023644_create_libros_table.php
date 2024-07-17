@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('autor_id')->constrained('autores', 'id')->onDelete('cascade');
             $table->foreignId('editorial_id')->constrained('editoriales', 'id')->onDelete('cascade'); // clave foránea a editoriales
             $table->date('ano_publicacion'); // año de publicación
-            $table->bigInteger('isbn')->unique(); // ISBN único
+            $table->bigInteger('isbn');
             $table->integer('cantidad'); // cantidad de libros
             $table->foreignId('categoria_id')->constrained('categorias', 'id')->onDelete('cascade');
         });
