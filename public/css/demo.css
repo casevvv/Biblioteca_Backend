@@ -560,6 +560,7 @@
         height: 640px;
         overflow: hidden;
     }
+
     .parallax .parallax-image img {
         height: 100%;
         width: auto;
@@ -582,6 +583,45 @@
 .separator.separator-gray{
     background-color: #EEEEEE;
 }*/
+
+/* Estilos personalizados para los gráficos */
+.ct-chart {
+    border-radius: 10px;
+    background-color: #f1f1f1;
+}
+
+.chart {
+    width: 50%;
+
+  }
+  
+
+.ct-series-line {
+    stroke-width: 2px;
+    stroke: #428bca;
+}
+
+.ct-series-bar {
+    stroke-width: 1px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.ct-label {
+    font-size: 14px;
+}
+
+.container-g {
+    padding: 10px;
+}
+
+.chart-section {
+    margin-bottom: 10px;
+}
+
+.chart-title {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
 
 .social-buttons-demo .btn {
     margin-right: 5px;
@@ -623,10 +663,12 @@
 }
 
 @media (max-width: 768px) {
+
     .btn,
     .btn-morphing {
         margin-bottom: 10px;
     }
+
     .parallax .motto {
         top: 170px;
         margin-top: 0;

@@ -12,14 +12,14 @@ class CreatePrestamosTable extends Migration
     {
         Schema::create('prestamos', function (Blueprint $table) {
             $table->id('id');
-            $table->foreignId('id_usuario')->constrained('usuarios', 'id');
+            $table->foreignId('user_id')->constrained('users', 'id');
             $table->foreignId('id_libro')->constrained('libros', 'id');
             $table->timestamp('fecha_prestamo',0);
             $table->timestamp('fecha_devolucion',0);
             $table->enum('estado', ['prestado', 'devuelto', 'cancelado'])->default('prestado');
 
             $table->index('id_libro');
-            $table->index('id_usuario');
+            $table->index('user_id');
         });
     }
 

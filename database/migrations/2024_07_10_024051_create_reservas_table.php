@@ -11,14 +11,13 @@ class CreateReservasTable extends Migration
     {
         Schema::create('reservas', function (Blueprint $table) {
             $table->id('id');
-            $table->foreignId('id_usuario')->constrained('usuarios', 'id');
+            $table->foreignId('user_id')->constrained('users', 'id');
             $table->foreignId('id_libro')->constrained('libros', 'id');
             $table->timestamp('fecha_reserva')->nullable(false); // Asegúrate de que no sea nulo
-            $table->timestamp('fecha_confirm_reserva')->nullable(); // Puede ser nulo al inicio
             $table->enum('estado_reserva', ['pendiente', 'completada', 'cancelada'])->default('pendiente');
 
             $table->index('id_libro');
-            $table->index('id_usuario');
+            $table->index('user_id');
         });
     }
 

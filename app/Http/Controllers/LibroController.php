@@ -34,6 +34,7 @@ class LibroController extends Controller
                 'isbn' => 'required|integer',
                 'cantidad' => 'required|integer',
                 'categoria' => 'nullable|string',
+                'imagen' => 'image|mimes:jpeg,png,jpg,gif,svg|max:1024'
             ]);
 
             if ($request->filled('categoria')) {
@@ -86,10 +87,19 @@ class LibroController extends Controller
             $libro->ano_publicacion = $request->ano_publicacion;
             $libro->isbn = $request->isbn;
             $libro->cantidad = $request->cantidad;
+            $libro->estado = true;
             $libro->categoria_id = $categoria_id;
-            $libro->save();
 
-            return Response()->json(['message' => 'Libro guardado exitosamente']);
+            if ($request->hasFile('imagen')) {
+                $image = $request->file('imagen');
+                $imageName = time() . '.' . $image->getClientOriginalExtension();
+                $image->storeAs('portada', $imageName, 'public');
+                $libro->imagen = $imageName;
+            }
+
+            $libro->save();
+            
+            return back()->with('success', 'Libro guardado exitosamente');
         } catch (Exception $e) {
             Log::error('Error al guardar el libro: ' . $e->getMessage());
             return response()->json(['error' => 'Error al guardar el libro: ' . $e->getMessage()], 500);
@@ -169,7 +179,7 @@ class LibroController extends Controller
             $libro->categoria_id = $categoria_id;
             $libro->save();
 
-            return response()->json(['message' => 'Libro actualizado exitosamente']);
+            return redirect()->route('mostrar_libros')->with('success', 'Libro actualizado exitosamente');
         } catch (Exception $e) {
             Log::error('Error al actualizar el libro: ' . $e->getMessage());
             return response()->json(['error' => 'Error al actualizar el libro: ' . $e->getMessage()], 500);

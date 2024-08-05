@@ -13,11 +13,11 @@ class Prestamo extends Model
 
     public $timestamps = false; // desactivar timestamps automáticos
 
-    protected $fillable = ['id_usuario', 'id_libro', 'estado', 'fecha_prestamo','fecha_devolucion'];
+    protected $fillable = ['user_id', 'id_libro', 'estado', 'fecha_prestamo','fecha_devolucion'];
 
     public function usuario()
     {
-        return $this->belongsTo(Usuario::class, 'id_usuario');
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function libro()

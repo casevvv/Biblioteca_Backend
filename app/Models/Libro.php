@@ -9,7 +9,7 @@ class Libro extends Model
     protected $primaryKey = 'id';
     public $timestamps = false; // Si no usas created_at y updated_at
 
-    protected $fillable = ['titulo', 'autor_id', 'editorial_id', 'ano_publicacion', 'isbn', 'cantidad', 'categoria_id'];
+    protected $fillable = ['titulo','imagen', 'autor_id', 'editorial_id', 'ano_publicacion', 'isbn', 'cantidad', 'categoria_id','estado'];
 
     public function categoria()
     {

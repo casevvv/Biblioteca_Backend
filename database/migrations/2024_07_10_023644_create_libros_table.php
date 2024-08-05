@@ -19,6 +19,8 @@ return new class extends Migration
             $table->date('ano_publicacion'); // año de publicación
             $table->bigInteger('isbn');
             $table->integer('cantidad'); // cantidad de libros
+            $table->boolean('estado')->default(true);
+            $table->string('imagen');
             $table->foreignId('categoria_id')->constrained('categorias', 'id')->onDelete('cascade');
         });
     }
