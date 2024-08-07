@@ -279,10 +279,10 @@
                                 <label for="imagen">Imagen:</label>
                                 <div class="mb-3 d-flex justify-content-center align-items-center flex-column">
                                     <input class="form-control-file" type="file" id="formFileMultiple"
-                                        name="imagenedit" multiple required onchange="vistaPreviaRegistro()">
+                                        name="imagenedit" multiple required onchange="vistaPreviaEdicion()">
                                     <br>
                                     <div class="text-center mt-2">
-                                        <img id="imagenPrevia" src="#" alt="Vista previa de la imagen"
+                                        <img id="vistaPreviaImagenEdit" src="#" alt="Vista previa de la imagen"
                                             style="max-width: 200px; max-height: 200px; display: none;">
                                     </div>
                                 </div>

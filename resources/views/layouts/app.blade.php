@@ -68,7 +68,7 @@
                             </li>
                         @endif
                         @if (Auth::check() && Auth::user()->tipo_usuario === 'admin')
-                            <li class="nav-item active">
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('dashboard') }}">
                                     <i class="nc-icon nc-chart-pie-35"></i>
                                     <p>Dashboard</p>
@@ -80,7 +80,7 @@
                                     <p>Book List</p>
                                 </a>
                             </li>
-                            <li class="nav-item active">
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('mostrar_usuarios') }}">
                                     <i class="nc-icon nc-notes"></i>
                                     <p>Usuarios</p>

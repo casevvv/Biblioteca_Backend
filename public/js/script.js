@@ -27,48 +27,25 @@ function updateTextInput(selectElement,inputId) {
  
 }
 
-darkLight.addEventListener("click", () => {
-  body.classList.toggle("dark");
-  if (body.classList.contains("dark")) {
-    document.setI;
-    darkLight.classList.replace("bx-sun", "bx-moon");
-  } else {
-    darkLight.classList.replace("bx-moon", "bx-sun");
-  }
-});
-
-submenuItems.forEach((item, index) => {
-  item.addEventListener("click", () => {
-    item.classList.toggle("show_submenu");
-    submenuItems.forEach((item2, index2) => {
-      if (index !== index2) {
-        item2.classList.remove("show_submenu");
-      }
-    });
-  });
-});
-
-
 //--------------------------------//
 function modalEdit(evento) {
   console.log("funciona")
   var id_tabla = $(evento.target).parents("tr").find("td").eq(0).text().trim();
-  var titulo_tabla = $(evento.target).parents("tr").find("td").eq(1).text().trim();
-  // var imagen_tabla = $(evento.target).parents("tr").find("td").eq(2).find("img").attr("src").trim(); // Obtener la ruta de la imagen
-  var autor_tabla = $(evento.target).parents("tr").find("td").eq(2).text().trim();
-  var categoria_tabla = $(evento.target).parents("tr").find("td").eq(3).text().trim();
-  var editorial_tabla = $(evento.target).parents("tr").find("td").eq(4).text().trim();
-  var isbn_tabla = $(evento.target).parents("tr").find("td").eq(5).text().trim();
-  var ano_publi_tabla = $(evento.target).parents("tr").find("td").eq(6).text().trim();
+  var imagen_tabla = $(evento.target).parents("tr").find("td").eq(1).find("img").attr("src").trim(); // Obtener la ruta de la imagen
+  var titulo_tabla = $(evento.target).parents("tr").find("td").eq(2).text().trim();
+  var autor_tabla = $(evento.target).parents("tr").find("td").eq(3).text().trim();
+  var categoria_tabla = $(evento.target).parents("tr").find("td").eq(4).text().trim();
+  var editorial_tabla = $(evento.target).parents("tr").find("td").eq(5).text().trim();
+  var isbn_tabla = $(evento.target).parents("tr").find("td").eq(6).text().trim();
+  var ano_publi_tabla = $(evento.target).parents("tr").find("td").eq(7).text().trim();
   // var estado_tabla = $(evento.target).parents("tr").find("td").eq().text().trim(); // Se cambia el índice al 5 para obtener el campo de estado
-  var cantidad_tabla = $(evento.target).parents("tr").find("td").eq(7).text().trim();
+  var cantidad_tabla = $(evento.target).parents("tr").find("td").eq(8).text().trim();
 
   // Convertir el valor del estado de la tabla a un texto legible
   // var estadoLegible = estadotabla === 'Activo' ? '1' : '0'; // Si es 'Activo', asignar '1', de lo contrario, asignar '0'
-  console.log(titulo_tabla)
-  console.log(autor_tabla)
-  console.log(categoria_tabla)
+
   // Llenar los campos del formulario de edición con los valores obtenidos
+  $("#imagenedit").val(imagen_tabla);
   $("#tituloedit").val(titulo_tabla);
   $("#autoredit").val(autor_tabla);
   $("#categoriaedit").val(categoria_tabla);
@@ -82,7 +59,7 @@ function modalEdit(evento) {
   // $("#estadoedit").val(estadoLegible);
 
   // Mostrar la vista previa de la imagen
-  // mostrarVistaPreviaEdicion(imagentabla);
+  mostrarVistaPreviaEdicion(imagen_tabla);
 }
 
 
